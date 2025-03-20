@@ -73,16 +73,18 @@ class Program
         HumanWorker human = new HumanWorker();
         RobotWorker robot = new RobotWorker();
 
+        // Demonstrating HumanWorker, who implements all behaviors
         Console.WriteLine("Human Worker:");
         human.Work();
         human.Eat();
         human.Sleep();
 
+        // Demonstrating RobotWorker, who only implements Work
         Console.WriteLine("\nRobot Worker:");
         robot.Work();
 
         Console.WriteLine("\nPart (v)");
-        
+
         // Process payment using Credit Card
         IPaymentProcessor creditCardProcessor = new CreditCardProcessor();
         OrderProcessor creditCardOrder = new OrderProcessor(creditCardProcessor);
