@@ -80,5 +80,19 @@ class Program
 
         Console.WriteLine("\nRobot Worker:");
         robot.Work();
+
+        Console.WriteLine("\nPart (v)");
+        
+        // Process payment using Credit Card
+        IPaymentProcessor creditCardProcessor = new CreditCardProcessor();
+        OrderProcessor creditCardOrder = new OrderProcessor(creditCardProcessor);
+        creditCardOrder.ProcessOrder(100.00m);
+
+        Console.WriteLine();
+
+        // Process payment using PayPal
+        IPaymentProcessor payPalProcessor = new PayPalProcessor();
+        OrderProcessor payPalOrder = new OrderProcessor(payPalProcessor);
+        payPalOrder.ProcessOrder(200.00m);
     }
 }
