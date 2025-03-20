@@ -68,5 +68,17 @@ class Program
         checking.Deposit(20); // Should work
         checking.Withdraw(490); // Should work with $1 fee
         checking.Withdraw(40); // Should reject (not enough funds)
+
+        Console.WriteLine("\nPart (iv)");
+        HumanWorker human = new HumanWorker();
+        RobotWorker robot = new RobotWorker();
+
+        Console.WriteLine("Human Worker:");
+        human.Work();
+        human.Eat();
+        human.Sleep();
+
+        Console.WriteLine("\nRobot Worker:");
+        robot.Work();
     }
 }
